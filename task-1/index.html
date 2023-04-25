@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Стрелочные функции и область видимости</title>
+</head>
+
+<body>
+
+    <script>
+        //Обычные функции не блокируют оператор this. Например, this становится
+        //чем-то другим в обратном вызове setTimeout, а не объектом tahoe:
+        const tahoe = {
+            mountains: ["Freel", "Rose", "Tallac", "Rubicon", "Silver"],
+            print: function (delay = 1000) {
+                setTimeout(function () {
+                    console.log(this.mountains.join(", "));
+                }, delay);
+            }
+        };
+        tahoe.print(); // Невозможно прочитать свойство ‘join’, принадлежащее undefined
+        //Эта ошибка возникает из-за того, что мы пытаемся использовать метод .join
+        //для объекта this. Но журнал говорит, что this является объектом Window:
+        console.log(this); // Window {}
+
+        //Чтобы решить эту проблему, мы можем использовать синтаксис стрелочной
+        //функции для защиты области видимости оператора this:
+        const tahoe = {
+            mountains: ["Freel", "Rose", "Tallac", "Rubicon", "Silver"],
+            print: function (delay = 1000) {
+                setTimeout(() => {
+                    console.log(this.mountains.join(", "));
+                }, delay);
+            }
+        };
+        tahoe.print(); // Freel, Rose, Tallac, Rubicon, Silver
+
+        //Все работает правильно, и мы можем использовать для курортов метод .join,
+        //перечисляя их через запятую. Будьте осторожны, всегда помните об области ви-
+        //димости. Стрелочные функции не блокируют область видимости оператора this:
+
+        const tahoe = {
+            mountains: ["Freel", "Rose", "Tallac", "Rubicon", "Silver"],
+            print: (delay = 1000) => {
+                setTimeout(() => {
+                    console.log(this.mountains.join(", "));
+                }, delay);
+            }
+        };
+        tahoe.print(); // Невозможно прочитать свойство ‘join’, принадлежащее undefined
+        //Замена функции print на стрелочную функцию означает, что this на самом
+        //деле является объектом Window.
+    </script>
+</body>
+
+</html>
