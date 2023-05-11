@@ -1,5 +1,6 @@
 import React from "react";
 import Recipe from "./Recipe";
+import StarRating from "./StarRating";
 
 function Menu({ recipes }) {
     return (
@@ -11,6 +12,9 @@ function Menu({ recipes }) {
                 {recipes.map((recipe, i) => (
                     <Recipe key={i} {...recipe} />
                 ))}
+            </div>
+            <div className="starRating">
+                <StarRating />
             </div>
         </article>
     );
