@@ -32,7 +32,7 @@ export default function StarRating({ totalStars = 5 }) {
                     onSelect={() => setSelectedStars(i + 1)}
                 />
             ))}
-            <p>
+            <p className="pl-2">
                 {selectedStars} of {totalStars} stars
             </p>
         </>

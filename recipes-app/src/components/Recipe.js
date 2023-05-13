@@ -1,11 +1,15 @@
 import React from "react";
 import IngredientsList from "./IngredientsList";
 import Instructions from "./Instructions";
+import StarRating from "./StarRating";
 
 function Recipe({ name, ingredients, steps }) {
     return (
-        <section id={name.toLowerCase().replace(/ /g, "-")} className="rounded-2xl border border-gray-200 p-8">
-            <h1>{name}</h1>
+        <section id={name.toLowerCase().replace(/ /g, "-")} className="flex flex-col overflow-hidden rounded-3xl p-6 mb-4 shadow-lg shadow-gray-900/5 bg-white">
+            <h3 className="font-semibold text-gray-900">{name}</h3>
+            <div className="starRating flex pt-2">
+                <StarRating />
+            </div>
             <IngredientsList list={ingredients} />
             <Instructions title="Cooking Instructions" steps={steps} />
         </section>
