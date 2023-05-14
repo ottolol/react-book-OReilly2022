@@ -1,6 +1,6 @@
 import React from "react";
 import Recipe from "./Recipe";
-import StarRating from "./StarRating";
+import MoreRecipes from "./MoreRecipes";
 
 function Menu({ recipes }) {
     return (
@@ -13,9 +13,7 @@ function Menu({ recipes }) {
                     <Recipe key={i} {...recipe} />
                 ))}
             </div>
-            {/* <div className="starRating flex pt-2">
-                <StarRating />
-            </div> */}
+            <MoreRecipes />
         </article>
     );
 }
