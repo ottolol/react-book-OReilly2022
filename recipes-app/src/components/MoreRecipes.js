@@ -9,9 +9,13 @@ function MoreRecipes() {
                     <div className="font-semibold text-gray-900 mb-4">Mini pizza</div>
                     <div><img src="recipes1.png" alt="" className="w-80 rounded-3xl" /></div>
                 </div>
-                <div className="">
+                <div className="me-[15px]">
                     <div className="font-semibold text-gray-900 mb-4">Mac with chicken fillet</div>
                     <div><img src="recipes2.png" alt="" className="w-80 rounded-3xl" /></div>
+                </div>
+                <div className="">
+                    <div className="font-semibold text-gray-900 mb-4">Chicken with fruits</div>
+                    <div><img src="recipes3.png" alt="" className="w-80 rounded-3xl" /></div>
                 </div>
             </section>
         </div>
