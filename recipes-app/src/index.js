@@ -6,8 +6,8 @@ import './index.css';
 import Menu from "./components/Menu";
 import data from "./data/recipes.json";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<Menu recipes={data} />, document.getElementById("root"));
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<Menu recipes={data} />, root);
 // root.render(
 //   <React.StrictMode>
 //     <App />

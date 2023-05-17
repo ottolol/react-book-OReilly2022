@@ -21,10 +21,10 @@ const createArray = length => [...Array(length)];
 //     return createArray(totalStars).map((n, i) => <Star key={i} />);
 // }
 
-export default function StarRating({ totalStars = 5 }) {
+export default function StarRating({ style = {}, totalStars = 5, ...props }) {
     const [selectedStars, setSelectedStars] = useState(0);
     return (
-        <>
+        <div className="flex pt-2" style={{ padding: "", ...style }} { ...props }>
             {createArray(totalStars).map((n, i) => (
                 <Star
                     key={i}
@@ -35,7 +35,7 @@ export default function StarRating({ totalStars = 5 }) {
             <p className="pl-2">
                 {selectedStars} of {totalStars} stars
             </p>
-        </>
+        </div>
     );
 }
 
