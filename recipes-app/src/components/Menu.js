@@ -1,7 +1,6 @@
 import React from "react";
 import Recipe from "./Recipe";
 import MoreRecipes from "./MoreRecipes";
-import ColorOrganizer from "./ColorOrganizer";
 
 function Menu({ recipes }) {
     return (
@@ -15,7 +14,6 @@ function Menu({ recipes }) {
                 ))}
             </div>
             <MoreRecipes />
-            <ColorOrganizer />
         </article>
     );
 }
